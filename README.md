@@ -19,7 +19,7 @@ The main project directory contains two folders: `dev` and `prod`. _Dev folder_ 
 ###### Let's start from `sass` folder.
 It contains a library bootstrap v4.0.0 and the directory in which you gather your own styles for the project. The suggested structure is as follows:
 - sass
- -- bootstrap
- -- site
-  -- components
-  -- core
+ - bootstrap
+ - site
+  - components
+  - core
