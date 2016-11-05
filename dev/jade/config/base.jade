@@ -28,19 +28,14 @@ html()&attributes({
     body()&attributes({'class': body_classes})
         //- Preloader
         if preloader
-            include ../includes/preloader
         #page-wrapper
             //- Top bar
             if top_bar
-                include ../includes/top-bar
             main#content-wrapper.content-wrapper
                 //- Nav bar
                 if nav_bar
-                    include ../includes/navbar-desktop
                 block page_content
             //- footer
             if footer
-                include ../includes/footer
-        include ../javascript/scripts
         // JavaScript Plugins
         block javascript_plugins

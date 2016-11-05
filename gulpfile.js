@@ -25,7 +25,7 @@ var vendorJSConcat = "vendor.min.js";
 gulp.task('browser-sync', function() {
     return browserSync.init({
         server: {
-            baseDir: 'html'
+            baseDir: 'prod'
         },
         ghostMode: false
     });
@@ -52,7 +52,7 @@ gulp.task('jade', function() {
 	.pipe(jade({
     	pretty: true
 	}))
-	.pipe(gulp.dest('html'));
+	.pipe(gulp.dest('prod'));
 });
 
 //- Javascript vendor
@@ -111,13 +111,13 @@ gulp.task('sass-site', function() {
 
 //- Sitemap
 gulp.task('sitemap', function() {
-	gulp.src('html/*.html', {
+	gulp.src('prod/*.html', {
 		read: false
 	})
 	.pipe(sitemap({
 		siteUrl: 'http://www.netmyk.pl'
 	}))
-	.pipe(gulp.dest('html'))
+	.pipe(gulp.dest('prod'))
 });
 
 //- Gulp copy images from DEV to PROD
@@ -141,9 +141,9 @@ gulp.task('watch', function() {
     gulp.watch('dev/javascript/vendor/*.js', ['js-vendor']);
 		gulp.watch('dev/javascript/plugins/**/*.js', ['js-plugins']);
     gulp.watch('dev/javascript/main.js', ['js-main']);
-    gulp.watch('html/*.html', browserSync.reload);
-    gulp.watch('html/assets/javascript/*.js', browserSync.reload);
-		gulp.watch('html/assets/javascript/**/*.js', browserSync.reload);
+    gulp.watch('prod/*.html', browserSync.reload);
+    gulp.watch('prod/assets/javascript/*.js', browserSync.reload);
+		gulp.watch('prod/assets/javascript/**/*.js', browserSync.reload);
 });
 
 //- Gulp default
