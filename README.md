@@ -14,4 +14,4 @@ git clone https://github.com/kwielicki/boilerplate.git
 In the main folder there is a file _gulpfile.js_, which has a number of dependencies are used when building your application.To install them call in the main project folder command **npm install**.
 
 #### Okay, now's look at its structure.
-The main project directory contains two folders: `dev` and `prod`.
+The main project directory contains two folders: `dev` and `prod`. **Dev folder** - is a folder "builder", in which data is stored items such as Jade, Sass, Images, JavaScripts - all divided into the smallest possible modules.
