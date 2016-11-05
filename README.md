@@ -22,5 +22,5 @@ It contains a library bootstrap v4.0.0 and the directory in which you gather you
 * sass
  * bootstrap
  * site
-  * components
-  * core
+   * components
+   * core
