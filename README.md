@@ -1,5 +1,4 @@
 # Boilerplate v1.0.0
+Collection of technology to create projects in the HTML structure
 
-,,,
-It's prepared on the basis of such technologies as
-,,,
+
