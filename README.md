@@ -15,3 +15,6 @@ In the main folder there is a file _gulpfile.js_, which has a number of dependen
 
 #### Okay, now's look at its structure.
 The main project directory contains two folders: `dev` and `prod`. _Dev folder_ - is a folder "builder", in which data is stored items such as Jade, Sass, Images, JavaScripts - all divided into the smallest possible modules.
+
+###### Let's start from `sass` folder.
+It contains a library bootstrap v4.0.0 and the directory in which you gather your own styles for the project.
