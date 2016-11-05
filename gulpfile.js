@@ -10,7 +10,7 @@ var gulp			= require('gulp'),
 	sitemap 		= require('gulp-sitemap');
 
 //- Paths variables
-var devJSPath 			= "dev/javascript/",
+var devJSPath 			= "dev/js/",
 	devJSVendorPath 	= devJSPath + "vendor/",
 	devJADEPath			= "dev/jade/*.jade",
 	prodAssetsPath 		= "prod/assets/",
@@ -72,7 +72,7 @@ gulp.task('js-vendor', function() {
 
 //- Javascript main
 gulp.task('js-main', function() {
-	return gulp.src(devJSPath + 'main.js')
+	return gulp.src(devJSPath + 'core.js')
 		.pipe(plumber())
 		.pipe(gulp.dest(protAssetsJSPath))
 });
@@ -138,9 +138,9 @@ gulp.task('watch', function() {
     gulp.watch('dev/jade/**/*.jade', ['jade']);
     gulp.watch('dev/sass/**/*.scss', ['sass-site']);
     gulp.watch('dev/sass/site/style.scss', ['sass-site']);
-    gulp.watch('dev/javascript/vendor/*.js', ['js-vendor']);
-		gulp.watch('dev/javascript/plugins/**/*.js', ['js-plugins']);
-    gulp.watch('dev/javascript/main.js', ['js-main']);
+    gulp.watch('dev/js/vendor/*.js', ['js-vendor']);
+		gulp.watch('dev/js/plugins/**/*.js', ['js-plugins']);
+    gulp.watch('dev/js/core.js', ['js-main']);
     gulp.watch('prod/*.html', browserSync.reload);
     gulp.watch('prod/assets/javascript/*.js', browserSync.reload);
 		gulp.watch('prod/assets/javascript/**/*.js', browserSync.reload);
