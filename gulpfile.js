@@ -13,7 +13,7 @@ var gulp			= require('gulp'),
 var devJSPath 			= "dev/javascript/",
 	devJSVendorPath 	= devJSPath + "vendor/",
 	devJADEPath			= "dev/jade/*.jade",
-	prodAssetsPath 		= "html/assets/",
+	prodAssetsPath 		= "prod/assets/",
 	protAssetsJSPath 	= prodAssetsPath + "javascript/";
 var devSASSPath			= "dev/sass/",
 	prodAssetsCSSPath	= prodAssetsPath + "css/";
@@ -123,12 +123,12 @@ gulp.task('sitemap', function() {
 //- Gulp copy images from DEV to PROD
 gulp.task('copy', function() {
 	gulp.src(['dev/images/*.jpg', 'dev/images/*.png', 'dev/images/**/*.png', 'dev/images/**/*.jpg'])
-		.pipe(gulp.dest('html/assets/images'))
+		.pipe(gulp.dest('prod/assets/images'))
 });
 
 //- Zip HTML {ignored by .gitignore}
 gulp.task('zip', function() {
-	return gulp.src('html/**')
+	return gulp.src('prod/**')
 		.pipe(zip('pack.zip'))
 		.pipe(gulp.dest(''));
 })
