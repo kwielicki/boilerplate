@@ -10,4 +10,4 @@ Clone a copy of the main boilerplate git repo by running:
 ```bash
 git clone https://github.com/kwielicki/boilerplate.git
 ```
-In the main folder there is a file _gulpfile.js_, which has a number of dependencies are used when building your application. Aby je zainstalować wywołaj w głownym folderze projektu komendę *npm install*
+In the main folder there is a file _gulpfile.js_, which has a number of dependencies are used when building your application.To install them call in the main project folder command **npm install**.
