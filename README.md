@@ -10,3 +10,4 @@ Clone a copy of the main boilerplate git repo by running:
 ```bash
 git clone https://github.com/kwielicki/boilerplate.git
 ```
+In the main folder there is a file gulpfile.js, which has a number of dependencies are used when building your application.
