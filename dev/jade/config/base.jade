@@ -1,0 +1,46 @@
+include config
+include ../mixins/mixins
+doctype
+<!--[if IE 8 ]>
+html.no-js.ie8(lang=page_lang)
+<![endif]-->
+<!--[if IE 9 ]>
+html.no-js.ie9(lang=page_lang)
+<![endif]-->
+html()&attributes({
+    'class'   : ['no-js'],
+    'lang'    : page_lang
+})
+    head
+        meta(charset=charset)
+        meta(name='description' content=page_description)
+        meta(name='author' content=page_author)
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width initial-scale=1')
+        meta(name='format-detection' content='telephone=no')
+        
+        title= page_title
+        script(src="https://use.fontawesome.com/60998be330.js")
+        link(rel='shortcut icon' href=path_image + 'favicon.ico')
+        link(rel='apple-touch-icon' href=path_image + 'favicon.png')
+        link(rel='stylesheet' href=path_css + 'bootstrap.min.css')
+        link(rel='stylesheet' href=path_css + 'style.min.css')
+    body()&attributes({'class': body_classes})
+        //- Preloader
+        if preloader
+            include ../includes/preloader
+        #page-wrapper
+            //- Top bar
+            if top_bar
+                include ../includes/top-bar
+            main#content-wrapper.content-wrapper
+                //- Nav bar
+                if nav_bar
+                    include ../includes/navbar-desktop
+                block page_content
+            //- footer
+            if footer
+                include ../includes/footer
+        include ../javascript/scripts
+        // JavaScript Plugins
+        block javascript_plugins
