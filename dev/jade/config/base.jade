@@ -23,7 +23,6 @@ html()&attributes({
         script(src="https://use.fontawesome.com/60998be330.js")
         link(rel='shortcut icon' href=path_image + 'favicon.ico')
         link(rel='apple-touch-icon' href=path_image + 'favicon.png')
-        link(rel='stylesheet' href=path_css + 'bootstrap.min.css')
         link(rel='stylesheet' href=path_css + 'style.min.css')
     body()&attributes({'class': body_classes})
         //- Preloader
@@ -37,5 +36,6 @@ html()&attributes({
                 block page_content
             //- footer
             if footer
+        include ../js/scripts
         // JavaScript Plugins
         block javascript_plugins
