@@ -25,5 +25,6 @@ It contains a library bootstrap v4.0.0 and the directory in which you gather you
    * components
       * _comp-footer.scss
       * _comp-header.scss
+      * site-components.scss _import all your components into this file_
     * core
     * style.scss
