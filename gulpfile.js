@@ -85,7 +85,8 @@ gulp.task('js-plugins', function() {
 		devJSPath + 'plugins/slick-slider/slick.js',
 		devJSPath + 'plugins/slick-slider/init.js',
 		devJSPath + 'plugins/tabs/tabs.js',
-		devJSPath + 'plugins/accordions/accordions.js'
+		devJSPath + 'plugins/accordions/accordions.js',
+		devJSPath + 'plugins/parallax/skrollr.js'
 	])
 	.pipe(plumber())
 	.pipe(concat(pluginsJSConcat))

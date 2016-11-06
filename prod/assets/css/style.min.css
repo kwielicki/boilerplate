@@ -5069,4 +5069,17 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   border-top: 0;
   border-radius: 0 0 5px 5px; }
 
+[data-background], html:not(.mobile) [data-parallax] {
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat; }
+
+html:not(.mobile) [data-parallax] {
+  background-attachment: fixed; }
+  html:not(.mobile) [data-parallax].disabled {
+    background-attachment: scroll; }
+
+body {
+  height: 3000px; }
+
 /*# sourceMappingURL=style.min.css.map */

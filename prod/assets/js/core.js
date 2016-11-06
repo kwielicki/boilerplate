@@ -156,6 +156,14 @@
 
 		$body.addClass('window-loaded');
 
+        /* Parallax Skrollr - init */
+            var skroll;
+            if (!$html.hasClass('mobile') && !$html.hasClass('tablet') && $deviceWidth > 991) {
+                skroll = skrollr.init({
+                    forceHeight: false
+                });
+            }
+
 	});//- Window on load [end]
 
 }(jQuery))
