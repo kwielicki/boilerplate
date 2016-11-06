@@ -82,7 +82,7 @@ gulp.task('js-main', function() {
 //- Javascript plugins
 gulp.task('js-plugins', function() {
 	return gulp.src([
-		devJSPath + 'plugins/slick-slider/slick.min.js',
+		devJSPath + 'plugins/slick-slider/slick.js',
 		devJSPath + 'plugins/slick-slider/init.js'
 	])
 	.pipe(plumber())
