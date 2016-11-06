@@ -43,6 +43,18 @@
                 $body.removeClass('css-animate');
             }
         }
+    /* Window on resize with delay */
+    var TIMEOUT   = 200,
+        EVENT_KEY = 'resizeend',
+        $window = $(window),
+        timer;
+
+        window.addEventListener('resize', function () {
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                $window.trigger(EVENT_KEY);
+            }, TIMEOUT);
+        });
 
     $(document).on('ready', function() {
 
@@ -206,5 +218,9 @@
         cssAnimate();
 
     }); //- Window on scroll [end]
+
+    $(window).on('resizeend', function() {
+        alert('resized')
+    }); //- window on resize [end]
 
 }(jQuery))
