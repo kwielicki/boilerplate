@@ -86,7 +86,9 @@ gulp.task('js-plugins', function() {
 		devJSPath + 'plugins/slick-slider/init.js',
 		devJSPath + 'plugins/tabs/tabs.js',
 		devJSPath + 'plugins/accordions/accordions.js',
-		devJSPath + 'plugins/parallax/skrollr.js'
+		devJSPath + 'plugins/parallax/skrollr.js',
+		devJSPath + 'plugins/lightgallery/lightgallery.js',
+		devJSPath + 'plugins/lightgallery/init.js'
 	])
 	.pipe(plumber())
 	.pipe(concat(pluginsJSConcat))
@@ -139,6 +141,12 @@ gulp.task('sitemap', function() {
 gulp.task('copy', function() {
 	gulp.src(['dev/images/*.jpg', 'dev/images/*.png', 'dev/images/**/*.png', 'dev/images/**/*.jpg'])
 		.pipe(gulp.dest('prod/assets/images'))
+});
+
+//- Gulp copy fonts from DEV to prod
+gulp.task('copy-fonts', function() {
+	gulp.src(['dev/fonts/**/*.*'])
+		.pipe(gulp.dest('prod/assets/fonts'))
 });
 
 //- Zip HTML {ignored by .gitignore}
