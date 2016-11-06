@@ -63,6 +63,11 @@
                 customClass: "js-placeholder"
             });
 
+        /** Tooltipster **/
+            $('.tooltipster').tooltipster({
+                delay: 50
+            });
+
         /** Page scroller **/
             if ($('[data-scroll]').length > 0) {
                 $('[data-scroll]').on('click', function(e) {

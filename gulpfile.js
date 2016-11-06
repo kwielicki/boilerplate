@@ -88,7 +88,8 @@ gulp.task('js-plugins', function() {
 		devJSPath + 'plugins/accordions/accordions.js',
 		devJSPath + 'plugins/parallax/skrollr.js',
 		devJSPath + 'plugins/lightgallery/lightgallery.js',
-		devJSPath + 'plugins/lightgallery/init.js'
+		devJSPath + 'plugins/lightgallery/init.js',
+		devJSPath + 'plugins/tooltipster/tooltipster.js'
 	])
 	.pipe(plumber())
 	.pipe(concat(pluginsJSConcat))
