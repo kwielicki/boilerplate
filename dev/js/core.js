@@ -9,14 +9,14 @@
 
 	/** Get location and set data-location **/
     var $windowLocation = window.location.pathname;
-        $html.attr('data-location', $windowLocation);  
+        $html.attr('data-location', $windowLocation);
 
     /** Get browser language **/
-    var browserLanguage = window.navigator.userLanguage || window.navigator.language;    
+    var browserLanguage = window.navigator.userLanguage || window.navigator.language;
     	$html.attr('data-browser-language', browserLanguage);
-        
+
     /** DeviceJS no conflict **/
-    var devicejs = device.noConflict(); 
+    var devicejs = device.noConflict();
 
     $(document).on('ready', function() {
 

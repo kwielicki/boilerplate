@@ -7,6 +7,7 @@ var gulp			= require('gulp'),
 	autoprefixer	= require('gulp-autoprefixer'),
 	sourcemaps		= require('gulp-sourcemaps'),
 	zip 			= require('gulp-zip'),
+	minify 			= require('gulp-minify'),
 	sitemap 		= require('gulp-sitemap');
 
 //- Paths variables
@@ -19,7 +20,8 @@ var devSASSPath			= "dev/sass/",
 	prodAssetsCSSPath	= prodAssetsPath + "css/";
 
 //- Concat variables
-var vendorJSConcat = "vendor.min.js";
+var vendorJSConcat  = "vendor.min.js";
+var pluginsJSConcat = "plugins.js";
 
 //- Static Server
 gulp.task('browser-sync', function() {
@@ -79,9 +81,19 @@ gulp.task('js-main', function() {
 
 //- Javascript plugins
 gulp.task('js-plugins', function() {
-	return gulp.src(devJSPath + 'plugins/**/*.js')
-		.pipe(plumber())
-		.pipe(gulp.dest(protAssetsJSPath + 'plugins'))
+	return gulp.src([
+		devJSPath + 'plugins/slick-slider/slick.min.js',
+		devJSPath + 'plugins/slick-slider/init.js'
+	])
+	.pipe(plumber())
+	.pipe(concat(pluginsJSConcat))
+	.pipe(minify({
+        ext:{
+            src:'.js',
+            min:'-min.js'
+        }
+    }))
+	.pipe(gulp.dest(protAssetsJSPath + 'plugins'))
 });
 
 //- Sass Bootstrap
