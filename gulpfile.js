@@ -140,7 +140,7 @@ gulp.task('watch', function() {
     gulp.watch('dev/sass/site/style.scss', ['sass-site']);
     gulp.watch('dev/js/vendor/*.js', ['js-vendor']);
 	gulp.watch('dev/js/plugins/**/*.js', ['js-plugins']);
-    gulp.watch('dev/JS/core.js', ['js-main']);
+    gulp.watch('dev/js/core.js', ['js-main']);
     gulp.watch('prod/*.html', browserSync.reload);
     gulp.watch('prod/assets/js/*.js', browserSync.reload);
 		gulp.watch('prod/assets/js/**/*.js', browserSync.reload);
