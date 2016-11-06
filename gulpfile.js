@@ -83,7 +83,8 @@ gulp.task('js-main', function() {
 gulp.task('js-plugins', function() {
 	return gulp.src([
 		devJSPath + 'plugins/slick-slider/slick.js',
-		devJSPath + 'plugins/slick-slider/init.js'
+		devJSPath + 'plugins/slick-slider/init.js',
+		devJSPath + 'plugins/tabs/tabs.js'
 	])
 	.pipe(plumber())
 	.pipe(concat(pluginsJSConcat))
@@ -151,11 +152,10 @@ gulp.task('watch', function() {
     gulp.watch('dev/sass/**/*.scss', ['sass-site']);
     gulp.watch('dev/sass/site/style.scss', ['sass-site']);
     gulp.watch('dev/js/vendor/*.js', ['js-vendor']);
-	gulp.watch('dev/js/plugins/**/*.js', ['js-plugins']);
     gulp.watch('dev/js/core.js', ['js-main']);
     gulp.watch('prod/*.html', browserSync.reload);
     gulp.watch('prod/assets/js/*.js', browserSync.reload);
-		gulp.watch('prod/assets/js/**/*.js', browserSync.reload);
+	gulp.watch('prod/assets/js/**/*.js', browserSync.reload);
 });
 
 //- Gulp default
