@@ -18,6 +18,32 @@
     /** DeviceJS no conflict **/
     var devicejs = device.noConflict();
 
+    /** Function for css animate **/
+        function cssAnimate() {
+            if (!$html.hasClass('mobile') && !$html.hasClass('tablet') && $deviceWidth > 991){
+                $('.css-animate .animated').each(function(){
+                    var that = $(this);
+                    if (that.data('time') != undefined){
+                        var delay = that.attr('data-time');
+                        if(that.visible(true)){
+                            setTimeout(function(){
+                                that.addClass('activate');
+                                that.addClass(that.data('fx'));
+                            }, delay)
+                        }
+                    }
+                    else{
+                        if(that.visible(true)){
+                            that.addClass('activate');
+                            that.addClass(that.data('fx'));
+                        }
+                    }
+                });
+            } else {
+                $body.removeClass('css-animate');
+            }
+        }
+
     $(document).on('ready', function() {
 
         /** jQuery browser / device **/
@@ -164,6 +190,16 @@
                 });
             }
 
+        /* Execute function for css animate */
+        cssAnimate();
+
 	});//- Window on load [end]
+
+    $(window).on('scroll', function() {
+
+        /* Execute function for css animate */
+        cssAnimate();
+
+    }); //- Window on scroll [end]
 
 }(jQuery))
