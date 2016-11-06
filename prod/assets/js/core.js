@@ -19,8 +19,7 @@
     var devicejs = device.noConflict();
 
     $(document).on('ready', function() {
-
-
+        
 	}); //- Document on ready [end]
 
 	$(window).on('load', function() {

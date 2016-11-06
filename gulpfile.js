@@ -84,14 +84,15 @@ gulp.task('js-plugins', function() {
 	return gulp.src([
 		devJSPath + 'plugins/slick-slider/slick.js',
 		devJSPath + 'plugins/slick-slider/init.js',
-		devJSPath + 'plugins/tabs/tabs.js'
+		devJSPath + 'plugins/tabs/tabs.js',
+		devJSPath + 'plugins/accordions/accordions.js'
 	])
 	.pipe(plumber())
 	.pipe(concat(pluginsJSConcat))
 	.pipe(minify({
         ext:{
             src:'.js',
-            min:'-min.js'
+            min:'.min.js'
         }
     }))
 	.pipe(gulp.dest(protAssetsJSPath + 'plugins'))
