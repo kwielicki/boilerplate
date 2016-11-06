@@ -79,6 +79,77 @@
                     $this.addClass('js-parallax-disabled');
                 })
             }
+        /** Helpers **/
+
+            // Min height
+                if ($('[data-height]').length > 0) {
+                    $('[data-height]').each(function() {
+                        var $height, $this;
+                        $this = $(this);
+                        $height = $this.attr('data-height');
+                        if ($height.indexOf('%') > -1) {
+                            $this.css('min-height', $deviceHeight * parseInt($height, 10) / 100);
+                        } else {
+                            $this.css('min-height', parseInt($height, 10) + 'px');
+                        }
+                    });
+                }
+
+            // Background color for desktop and mobile
+                if ($('[data-background]').length > 0) {
+                    $('[data-background]').each(function() {
+                        var $background, $backgroundmobile, $this;
+                        $this = $(this);
+                        $background = $(this).attr('data-background');
+                        $backgroundmobile = $(this).attr('data-background-mobile');
+                        if ($this.attr('data-background').substr(0, 1) === '#') {
+                            $this.css('background-color', $background);
+                        } else if ($html.hasClass('mobile')) {
+                            $this.css('background-image', 'url(' + $backgroundmobile + ')');
+                        } else {
+                            $this.css('background-image', 'url(' + $background + ')');
+                        }
+                    });
+                }
+
+            // Background position
+                if ($('[data-background-position]').length > 0) {
+                    $('[data-background-position]').each(function() {
+                        var $bgPosition, $this;
+                        $this = $(this);
+                        $bgPosition = $(this).attr('data-background-position');
+                        if ($this.attr('data-background-position') == '') {
+                            $this.css('background-position', '50% 50%');
+                        }
+                        else if ($this.attr('data-background-position')) {
+                            $this.css('background-position', $bgPosition);
+                        }
+                    });
+                }
+
+            // Background size
+                if ($('[data-background-size]').length > 0) {
+                    $('[data-background-size]').each(function() {
+                        var $bgSize, $this;
+                        $this = $(this);
+                        $bgSize = $(this).attr('data-background-size');
+                        if ($this.attr('data-background-size') == '') {
+                            $this.css('background-size', 'cover');
+                        }
+                        else if ($this.attr('data-background-position')) {
+                            $this.css('background-size', $bgSize);
+                        }
+                    });
+                }
+
+            // Color
+                if ($('[data-color]').length > 0) {
+                    $('[data-color]').each(function() {
+                        var $this = $(this),
+                            $color = $this.attr('data-color');
+                        $this.css('color', $color);
+                    });
+                }
 	}); //- Document on ready [end]
 
 	$(window).on('load', function() {
