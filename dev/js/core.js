@@ -44,7 +44,7 @@
             }
         }
     /* Window on resize with delay */
-    var TIMEOUT   = 200,
+    var TIMEOUT   = $html.attr('data-resized'),
         EVENT_KEY = 'resizeend',
         $window = $(window),
         timer;
