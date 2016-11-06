@@ -19,6 +19,18 @@
     var devicejs = device.noConflict();
 
     $(document).on('ready', function() {
+
+        /** jQuery browser / device **/
+        $html.addClass('ver-' + $.browser.versionNumber);
+        $html.addClass('device_width-' + $deviceWidth);
+        $html.addClass('device_height-' +$deviceHeight);
+        if ($.browser.webkit) {
+            $html.addClass('browser-webkit');
+        } else if ($.browser.msie) {
+            $html.addClass('browser-msie');
+        } else if ($.browser.mozilla) {
+            $html.addClass('browser-mozilla');
+        }
         
 	}); //- Document on ready [end]
 
