@@ -5079,7 +5079,4 @@ html:not(.mobile) [data-parallax] {
   html:not(.mobile) [data-parallax].disabled {
     background-attachment: scroll; }
 
-body {
-  height: 3000px; }
-
 /*# sourceMappingURL=style.min.css.map */
