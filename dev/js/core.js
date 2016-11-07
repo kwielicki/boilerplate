@@ -220,7 +220,7 @@
     }); //- Window on scroll [end]
 
     $(window).on('resizeend', function() {
-        alert('resized')
+        
     }); //- window on resize [end]
 
 }(jQuery))
