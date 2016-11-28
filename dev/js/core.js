@@ -193,6 +193,21 @@
                         $this.css('color', $color);
                     });
                 }
+
+        // Code for mode-rewrite data-attributes
+        if ($('[data-mode-rewrite="on"]').length > 0) {
+            $('a[href]').each(function() {
+                var $this    = $(this),
+                    attrHref = $this.attr('href');
+                
+                $this.attr('data-rewrite-mode', attrHref + ".html");
+
+                var modeRewiteText = $this.attr('data-rewrite-mode');
+                console.log(modeRewiteText);
+                $this.attr('href', modeRewiteText);
+                $this.attr('data-rewrite-mode', attrHref);
+            }); 
+        }
 	}); //- Document on ready [end]
 
 	$(window).on('load', function() {
