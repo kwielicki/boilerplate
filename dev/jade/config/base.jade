@@ -8,10 +8,11 @@ html.no-js.ie8(lang=page_lang)
 html.no-js.ie9(lang=page_lang)
 <![endif]-->
 html()&attributes({
-    'class'       : ['no-js'],
+    'class'       : ['no-js dom-html'],
     'lang'        : page_lang,
+    'data-project-name': project_name,
     'data-resized': 250,
-    'data-mode-rewrite': 'on',
+    'data-mode-rewrite': 'on'
 })
     head
         meta(charset=charset)

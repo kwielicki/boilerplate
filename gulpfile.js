@@ -47,6 +47,15 @@ var vendorJSobject = {
 	}
 }
 
+//- Bootstrap plugins
+
+var bootstrapJsObject = {
+	bs: {
+		util: 'bs.util.js',
+		modal: 'bs.modal.js'
+	}
+}
+
 //- Jade compiler
 gulp.task('jade', function() {
 	return gulp.src(devJADEPath)
@@ -89,7 +98,9 @@ gulp.task('js-plugins', function() {
 		devJSPath + 'plugins/parallax/skrollr.js',
 		devJSPath + 'plugins/lightgallery/lightgallery.js',
 		devJSPath + 'plugins/lightgallery/init.js',
-		devJSPath + 'plugins/tooltipster/tooltipster.js'
+		devJSPath + 'plugins/tooltipster/tooltipster.js',
+		devJSPath + 'plugins/bootstrap/bs.util.js',
+		devJSPath + 'plugins/bootstrap/bs.modal.js'
 	])
 	.pipe(plumber())
 	.pipe(concat(pluginsJSConcat))
