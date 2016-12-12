@@ -99,6 +99,7 @@ gulp.task('js-plugins', function() {
 		devJSPath + 'plugins/lightgallery/lightgallery.js',
 		devJSPath + 'plugins/lightgallery/init.js',
 		devJSPath + 'plugins/tooltipster/tooltipster.js',
+		devJSPath + 'plugins/cookies-policy/cookies-policy.js',
 		devJSPath + 'plugins/bootstrap/bs.util.js',
 		devJSPath + 'plugins/bootstrap/bs.modal.js'
 	])
