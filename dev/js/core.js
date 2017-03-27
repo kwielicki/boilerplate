@@ -49,12 +49,17 @@
         $window = $(window),
         timer;
 
-        window.addEventListener('resize', function () {
-            clearTimeout(timer);
-            timer = setTimeout(function () {
-                $window.trigger(EVENT_KEY);
-            }, TIMEOUT);
-        });
+    window.addEventListener('resize', function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            $window.trigger(EVENT_KEY);
+        }, TIMEOUT);
+    });
+
+    /* Metoda, która sprawdza czy dany obiekt istnieje */
+    $.fn.isExists = function() {
+        return this.length > 0;
+    }
 
     $(document).on('ready', function() {
 
@@ -199,14 +204,14 @@
             $('a[href]').each(function() {
                 var $this    = $(this),
                     attrHref = $this.attr('href');
-                
+
                 $this.attr('data-rewrite-mode', attrHref + ".html");
 
                 var modeRewiteText = $this.attr('data-rewrite-mode');
                 console.log(modeRewiteText);
                 $this.attr('href', modeRewiteText);
                 $this.attr('data-rewrite-mode', attrHref);
-            }); 
+            });
         }
 	}); //- Document on ready [end]
 
@@ -235,7 +240,7 @@
     }); //- Window on scroll [end]
 
     $(window).on('resizeend', function() {
-        
+
     }); //- window on resize [end]
 
 }(jQuery))
