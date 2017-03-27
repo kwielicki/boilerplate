@@ -185,4 +185,9 @@ gulp.task('watch', function() {
 gulp.task('default', [
     'watch',
     'browser-sync'
-]) ;
+]);
+
+//- Gulp builder
+gulp.task('builder', [
+	'jade', 'js-vendor', 'js-plugins', 'js-main', 'sass-bootstrap', 'sass-site', 'copy', 'copy-fonts'
+]);
