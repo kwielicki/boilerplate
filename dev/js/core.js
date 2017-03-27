@@ -205,12 +205,15 @@
                 var $this    = $(this),
                     attrHref = $this.attr('href');
 
-                $this.attr('data-rewrite-mode', attrHref + ".html");
+                if (!$this.attr('data-rewrite-mode-disabled')) {
 
-                var modeRewiteText = $this.attr('data-rewrite-mode');
-                console.log(modeRewiteText);
-                $this.attr('href', modeRewiteText);
-                $this.attr('data-rewrite-mode', attrHref);
+                    $this.attr('data-rewrite-mode', attrHref + ".html");
+                    var modeRewiteText = $this.attr('data-rewrite-mode');
+                    $this.attr('href', modeRewiteText);
+                    $this.attr('data-rewrite-mode', attrHref);
+
+                }
+
             });
         }
 	}); //- Document on ready [end]
