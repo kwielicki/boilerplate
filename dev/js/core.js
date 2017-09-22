@@ -204,13 +204,10 @@
                 var $this    = $(this),
                     attrHref = $this.attr('href');
                 if ($this.attr('data-rewrite-mode-disabled') !== '') {
-                  console.log($this.attr('data-rewrite-mode-disabled'));
-
                     $this.attr('data-rewrite-mode', attrHref + ".html");
                     var modeRewiteText = $this.attr('data-rewrite-mode');
                     $this.attr('href', modeRewiteText);
                     $this.attr('data-rewrite-mode', attrHref);
-
                 }
 
             });

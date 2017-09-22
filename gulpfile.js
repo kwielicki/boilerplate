@@ -1,37 +1,37 @@
-var gulp					= require('gulp'),
-		browserSync 	= require('browser-sync'),
-		plumber 			= require('gulp-plumber'),
-		concat  			= require('gulp-concat'),
-		jade 					= require('gulp-jade'),
-		sass					= require('gulp-sass'),
-		autoprefixer	= require('gulp-autoprefixer'),
-		sourcemaps		= require('gulp-sourcemaps'),
-		zip 					= require('gulp-zip'),
-		minify 				= require('gulp-minify'),
-		sitemap 			= require('gulp-sitemap');
+var gulp			= require('gulp'),
+	browserSync 	= require('browser-sync'),
+	plumber 		= require('gulp-plumber'),
+	concat  		= require('gulp-concat'),
+	pug 			= require('gulp-pug'),
+	sass			= require('gulp-sass'),
+	autoprefixer	= require('gulp-autoprefixer'),
+	sourcemaps		= require('gulp-sourcemaps'),
+	zip 			= require('gulp-zip'),
+	minify 			= require('gulp-minify'),
+	sitemap 		= require('gulp-sitemap');
 
 //- Create documentaion
-var docPath = "dev/jade/doc/**/*.jade";
+var docPath = "dev/pug/doc/**/*.pug";
 
 //- JDocumentation compiler
-gulp.task('jade-doc', function() {
+gulp.task('pug-doc', function() {
 	return gulp.src(docPath)
 	.pipe(plumber())
-	.pipe(jade({
+	.pipe(pug({
     	pretty: true
 	}))
 	.pipe(gulp.dest('prod/doc'));
 });
 
 //- Paths variables
-var devJSPath 				= "dev/js/",
-		devJSVendorPath 	= devJSPath + "vendor/",
-		devJADEPath				= "dev/jade/*.jade",
-		prodAssetsPath 		= "prod/assets/",
-		protAssetsJSPath 	= prodAssetsPath + "js/";
+var devJSPath 			= "dev/js/",
+	devJSVendorPath 	= devJSPath + "vendor/",
+	devPUGPath			= "dev/pug/*.pug",
+	prodAssetsPath 		= "prod/assets/",
+	protAssetsJSPath 	= prodAssetsPath + "js/";
 
-var devSASSPath				= "dev/sass/",
-		prodAssetsCSSPath	= prodAssetsPath + "css/";
+var devSASSPath			= "dev/sass/",
+	prodAssetsCSSPath	= prodAssetsPath + "css/";
 
 //- Concat variables
 var vendorJSConcat  = "vendor.min.js";
@@ -70,11 +70,11 @@ var bootstrapJsObject = {
 	}
 }
 
-//- Jade compiler
-gulp.task('jade', function() {
-	return gulp.src(devJADEPath)
+//- Pug compiler
+gulp.task('pug', function() {
+	return gulp.src(devPUGPath)
 	.pipe(plumber())
-	.pipe(jade({
+	.pipe(pug({
     	pretty: true
 	}))
 	.pipe(gulp.dest('prod'));
@@ -185,7 +185,7 @@ gulp.task('zip', function() {
 
 //- Gulp Watcher
 gulp.task('watch', function() {
-    gulp.watch('dev/jade/**/*.jade', ['jade']);
+    gulp.watch('dev/pug/**/*.pug', ['pug']);
     gulp.watch('dev/sass/**/*.scss', ['sass-site']);
     gulp.watch('dev/sass/site/style.scss', ['sass-site']);
     gulp.watch('dev/js/vendor/*.js', ['js-vendor']);
@@ -203,5 +203,5 @@ gulp.task('default', [
 
 //- Gulp builder
 gulp.task('builder', [
-	'jade', 'js-vendor', 'js-plugins', 'js-main', 'sass-bootstrap', 'sass-site', 'copy', 'copy-fonts'
+	'pug', 'js-vendor', 'js-plugins', 'js-main', 'sass-bootstrap', 'sass-site', 'copy', 'copy-fonts'
 ]);
