@@ -1,0 +1,5 @@
+.tab-link {
+  &.is-active {
+    pointer-events: none;
+  }
+}

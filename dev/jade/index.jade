@@ -7,3 +7,33 @@ block page_content
                 .jumbotron
                     h1.display-3 Boilerplate v1.0.1
                     p.lead Przygotwany w oparciu o Bootstrapa w wersji 4.0.0, Jade, Gulpa oraz preprocesor Sass.
+                //- Multiple
+                .js-accordion.accordion(data-multiple)
+                    h2.js-accordion__header.accordion__header Section 1
+                    .js-accordion__content.accordion__content
+                        p Section 1 content
+                    h2.js-accordion__header.accordion__header Section 2
+                    .js-accordion__content.accordion__content
+                        p Section 2 Content
+
+                //- Single
+                .js-accordion.accordion
+                    h2.js-accordion__header.accordion__header Section 1
+                    .js-accordion__content.accordion__content
+                        p Section 1 content
+                    h2.js-accordion__header.accordion__header Section 2
+                    .js-accordion__content.accordion__content
+                        p Section 2 Content
+                        a(href="abc") Link testowy
+                .tabs-wrapper
+                    .tabs-navigation
+                        li.tab-link.is-active: a(href="#tab1" data-rewrite-mode-disabled) Tab1
+                        li.tab-link: a(href="#tab2" data-rewrite-mode-disabled) Tab2
+                        li.tab-link: a(href="#tab3" data-rewrite-mode-disabled) Tab3
+                    .tabs-content
+                        #tab1
+                            h1 Tab1
+                        #tab2
+                            h1 Tab2
+                        #tab3
+                            h1 Tab3

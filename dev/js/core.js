@@ -61,8 +61,7 @@
         return this.length > 0;
     }
 
-    $(document).on('ready', function() {
-
+    $(document).ready(function() {
         /** jQuery browser / device **/
             $html.addClass('ver-' + $.browser.versionNumber);
             $html.addClass('device_width-' + $deviceWidth);
@@ -204,8 +203,8 @@
             $('a[href]').each(function() {
                 var $this    = $(this),
                     attrHref = $this.attr('href');
-
-                if (!$this.attr('data-rewrite-mode-disabled')) {
+                if ($this.attr('data-rewrite-mode-disabled') !== '') {
+                  console.log($this.attr('data-rewrite-mode-disabled'));
 
                     $this.attr('data-rewrite-mode', attrHref + ".html");
                     var modeRewiteText = $this.attr('data-rewrite-mode');
@@ -219,7 +218,6 @@
 	}); //- Document on ready [end]
 
 	$(window).on('load', function() {
-
 		$body.addClass('window-loaded');
 
         /* Parallax Skrollr - init */
@@ -236,7 +234,6 @@
 	});//- Window on load [end]
 
     $(window).on('scroll', function() {
-
         /* Execute function for css animate */
         cssAnimate();
 

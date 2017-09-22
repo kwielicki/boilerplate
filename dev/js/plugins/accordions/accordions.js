@@ -1,5 +1,5 @@
 (function ($) {
-    $(document).on('ready', function() {
+    $(document).ready(function() {
         $.fn.hasAttr = function(name) {
             return this.attr(name) !== undefined;
         };
@@ -14,17 +14,17 @@
 
                 if ($this.hasAttr('data-multiple')) {
                     $accordionHeader.on('click', function() {
-                        $(this).next().toggleClass('is-active').slideToggle('slow');
+                        $(this).next().toggleClass('is-active').stop( true, true ).slideToggle('slow');
                     });
                 } else {
                     $accordionHeader.on('click', function() {
                         if($(this).is('.inactive-header')) {
-                            $('.active-header').toggleClass('active-header').toggleClass('inactive-header').next().slideToggle().toggleClass('open-content');
+                            $('.active-header').toggleClass('active-header').toggleClass('inactive-header').next().stop( true, true ).slideToggle().toggleClass('open-content');
                             $(this).toggleClass('active-header').toggleClass('inactive-header');
-                            $(this).next().slideToggle().toggleClass('open-content');
+                            $(this).next().stop( true, true ).slideToggle().toggleClass('open-content');
                         } else {
                             $(this).toggleClass('active-header').toggleClass('inactive-header');
-                            $(this).next().slideToggle().toggleClass('open-content');
+                            $(this).next().stop( true, true ).slideToggle().toggleClass('open-content');
                         }
                     });
                 }

@@ -1,23 +1,37 @@
-var gulp			= require('gulp'),
-	browserSync 	= require('browser-sync'),
-	plumber 		= require('gulp-plumber'),
-	concat  		= require('gulp-concat'),
-	jade 			= require('gulp-jade'),
-	sass			= require('gulp-sass'),
-	autoprefixer	= require('gulp-autoprefixer'),
-	sourcemaps		= require('gulp-sourcemaps'),
-	zip 			= require('gulp-zip'),
-	minify 			= require('gulp-minify'),
-	sitemap 		= require('gulp-sitemap');
+var gulp					= require('gulp'),
+		browserSync 	= require('browser-sync'),
+		plumber 			= require('gulp-plumber'),
+		concat  			= require('gulp-concat'),
+		jade 					= require('gulp-jade'),
+		sass					= require('gulp-sass'),
+		autoprefixer	= require('gulp-autoprefixer'),
+		sourcemaps		= require('gulp-sourcemaps'),
+		zip 					= require('gulp-zip'),
+		minify 				= require('gulp-minify'),
+		sitemap 			= require('gulp-sitemap');
+
+//- Create documentaion
+var docPath = "dev/jade/doc/**/*.jade";
+
+//- JDocumentation compiler
+gulp.task('jade-doc', function() {
+	return gulp.src(docPath)
+	.pipe(plumber())
+	.pipe(jade({
+    	pretty: true
+	}))
+	.pipe(gulp.dest('prod/doc'));
+});
 
 //- Paths variables
-var devJSPath 			= "dev/js/",
-	devJSVendorPath 	= devJSPath + "vendor/",
-	devJADEPath			= "dev/jade/*.jade",
-	prodAssetsPath 		= "prod/assets/",
-	protAssetsJSPath 	= prodAssetsPath + "js/";
-var devSASSPath			= "dev/sass/",
-	prodAssetsCSSPath	= prodAssetsPath + "css/";
+var devJSPath 				= "dev/js/",
+		devJSVendorPath 	= devJSPath + "vendor/",
+		devJADEPath				= "dev/jade/*.jade",
+		prodAssetsPath 		= "prod/assets/",
+		protAssetsJSPath 	= prodAssetsPath + "js/";
+
+var devSASSPath				= "dev/sass/",
+		prodAssetsCSSPath	= prodAssetsPath + "css/";
 
 //- Concat variables
 var vendorJSConcat  = "vendor.min.js";
@@ -69,10 +83,10 @@ gulp.task('jade', function() {
 //- Javascript vendor
 gulp.task('js-vendor', function() {
     return gulp.src([
-            devJSVendorPath + vendorJSobject.framework.jquery,
-            devJSVendorPath + vendorJSobject.helpers.browser,
-            devJSVendorPath + vendorJSobject.helpers.device,
-            devJSVendorPath + vendorJSobject.helpers.placeholder,
+      devJSVendorPath + vendorJSobject.framework.jquery,
+      devJSVendorPath + vendorJSobject.helpers.browser,
+      devJSVendorPath + vendorJSobject.helpers.device,
+      devJSVendorPath + vendorJSobject.helpers.placeholder,
 			devJSVendorPath + vendorJSobject.helpers.jqueryVisible,
 			devJSVendorPath + vendorJSobject.helpers.tooltip
     ])
@@ -178,7 +192,7 @@ gulp.task('watch', function() {
     gulp.watch('dev/js/core.js', ['js-main']);
     gulp.watch('prod/*.html', browserSync.reload);
     gulp.watch('prod/assets/js/*.js', browserSync.reload);
-	gulp.watch('prod/assets/js/**/*.js', browserSync.reload);
+		gulp.watch('prod/assets/js/**/*.js', browserSync.reload);
 });
 
 //- Gulp default

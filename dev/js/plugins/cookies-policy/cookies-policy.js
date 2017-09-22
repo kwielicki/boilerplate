@@ -5,7 +5,7 @@
 // *  Obsługa cookies
 // ***
 
-$(document).on('ready', function() {
+$(document).ready(function() {
     var CookiesPolicyManager = {
 
     findCookie: function (cookieName) {

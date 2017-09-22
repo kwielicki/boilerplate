@@ -131,7 +131,7 @@
         return $defaultValue;
     }
 
-    $(document).on('ready', function(){
+    $(document).ready(function(){
         if ($().lightGallery){
             if ($('._js-lightGallery').length > 0){
                 var $lightGallery = $('._js-lightGallery');

@@ -1,5 +1,5 @@
 (function ($) {
-    $(document).on('ready', function() {
+    $(document).ready(function() {
         if ($('.tabs-wrapper').length > 0) {
             $('.tabs-wrapper').each(function() {
                 var $this = $(this),
@@ -18,7 +18,7 @@
                                 $tabAnchor.hide();
                             }
                         })
-                        $item.children('a').on('click', function(e) {
+                        $item.children('a').on('click', function(event) {
                             var $this = $(this);
                             $item.removeClass('is-active');
                             $item.each(function() {
@@ -35,7 +35,7 @@
                             } else {
                                 $($this.attr('href')).fadeIn();
                             }
-                            e.preventDefault();
+                            event.preventDefault();
                         })
                     })
                 }
