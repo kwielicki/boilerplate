@@ -1,3 +1,7 @@
+/*
+ * @author Krzysztof Wielicki
+ *
+*/
 (function ($) {
     $(document).ready(function() {
         if ($('.tabs-wrapper').length > 0) {

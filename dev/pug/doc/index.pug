@@ -1,10 +1,86 @@
 //- Document Head
 extends ../config/base
+block vars
+    - var page_title   = "Boilerplate - dokumentacja"
+    - var body_classes = ['css-animate dom-body page-documentation']
+block additional_styles
+    style(type="text/css").
+        body {background-color: #e7eaeb;}
+        .documentation-box {border: 1px solid rgba(0,0,0,.05); margin: 25px 0;}
+        .documentation-box__title {padding: 15px 20px; background-color: #fff; margin-bottom: 0; border-bottom: 1px solid #ccc;}
+        .documentation-box__inner {padding: 15px 20px; background-color: #fff;}
+        pre {
+            display: block;
+            padding: 9.5px;
+            font-size: 13px;
+            line-height: 1.42857143;
+            color: #333;
+            word-break: break-all;
+            word-wrap: break-word;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+        }
+        pre code {color: green;}
+        pre em {font-style: italic;}
+        .text-underline {text-decoration: underline;}
+        .documentation-box__segment {padding: 15px 15px 0 0; margin: 0 15px 0 30px;}
+        .documentation-box__header {font-weight: 300; margin-bottom: 0; padding-bottom: 10px;}
+        .documentation-box__header--primary {border-bottom: 1px solid red;}
+        .documentation-box__header--secondary {border-bottom: 1px solid green;}
+        .documentation-box__list {padding: 10px 15px; color: #696969;}
+        .documentation-box__list a {color: inherit;}
 block page_content
-    section.page-documentation
+    section.section
         .container-fluid
             .row
                 .col-sm-3
-                    p 3
+                    .documentation-box
+                        h5.documentation-box__title Dokumentacja
+                        .documentation-box__segment
+                            h6.documentation-box__header.documentation-box__header--primary Struktura projektu
+                        .documentation-box__segment
+                            h6.documentation-box__header.documentation-box__header--secondary JavaScript
+                            ul.list-unstyled.documentation-box__list
+                                li: a(href="#") Biblioteki
+                                li: a(href="#") Wtyczki
+                                li: a(href="#") Komponenty
+                                li: a(href="#") Core
                 .col-sm-9
-                    p 9
+                    .documentation-box.documentation-box__wide
+                        h5.documentation-box__title Struktura projektu
+                        .documentation-box__inner
+                            pre.
+                                - dev (folder deweloperski)
+                                    - fonts #[em (katolog przechowujący #[span(class="text-underline") fonty])]
+                                    - images #[em (katalog przechowujący #[span(class="text-underline") obrazy])]
+                                    - js #[em (katalog przechowujący #[span(class="text-underline") javascript])]
+                                    - pug #[em (katalog przechowujący #[span(class="text-underline") templatki pug])]
+                                    - sass #[em (katalog przechowujący style)]
+                                - prod (folder produkcyjny)
+                                    - assets #[em (katalog przechowujący #[span(class="text-underline") fonty, obrazy, javascript, style] wymagane dla środowiska produkcyjnego)]
+                                - gulpfile.js
+                                - package.json
+                        h5.documentation-box__title JavaScript
+                        .documentation-box__inner
+                            pre.
+                                - biblioteki (path: dev/js/vendor)
+                                    - jQuery - JavaScript Library v3.2.1
+                                    - browser.js - jQuery Browser Plugin v0.0.8
+                                    - device.js - v0.2.7
+                                    - HTML5 Placeholder - jQuery Plugin v2.3.1
+                                    - jQuery visible
+                            pre.
+                                - wtyczki (path: dev/js/plugins)
+                                    - accordions
+                                    - tabs
+                                    - bootstrap (utils, modal)
+                                    - cookies policy
+                                    - lightgallery
+                                    - parallax (skrollr)
+                                    - slick slider
+                                    - tooltipster
+    footer.footer
+        .container
+            .row
+                .col-xs-12
+                    p.text-xs-center.note &#x24B8;&nbsp;2017 Boilerplate. Stworzone z &#x2665; przez Krzysztof Wielicki.

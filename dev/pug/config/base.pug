@@ -16,6 +16,7 @@ html()&attributes({
 })
     head
         meta(charset=charset)
+        block vars
         meta(name='description' content=page_description)
         meta(name='author' content=page_author)
         meta(http-equiv='X-UA-Compatible' content='IE=edge')
@@ -27,6 +28,7 @@ html()&attributes({
         link(rel='shortcut icon' href=path_image + 'favicon.ico')
         link(rel='apple-touch-icon' href=path_image + 'favicon.png')
         link(rel='stylesheet' href=path_css + 'style.min.css')
+        block additional_styles
     body()&attributes({'class': body_classes})
         //- Google Analitics
         if google_analitics

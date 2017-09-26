@@ -1,39 +1,23 @@
 //- Document Head
 extends config/base
+block vars
+    - var page_title   = "Boilerplate - strona główna"
 block page_content
     .container
         .row
             .col-xs-12
                 .jumbotron
-                    h1.display-3 Boilerplate v1.0.1
-                    p.lead Przygotwany w oparciu o Bootstrapa w wersji 4.0.0, Jade, Gulpa oraz preprocesor Sass.
-                //- Multiple
-                .js-accordion.accordion(data-multiple)
-                    h2.js-accordion__header.accordion__header Section 1
-                    .js-accordion__content.accordion__content
-                        p Section 1 content
-                    h2.js-accordion__header.accordion__header Section 2
-                    .js-accordion__content.accordion__content
-                        p Section 2 Content
-
-                //- Single
-                .js-accordion.accordion
-                    h2.js-accordion__header.accordion__header Section 1
-                    .js-accordion__content.accordion__content
-                        p Section 1 content
-                    h2.js-accordion__header.accordion__header Section 2
-                    .js-accordion__content.accordion__content
-                        p Section 2 Content
-                        a(href="abc") Link testowy
-                .tabs-wrapper
-                    .tabs-navigation
-                        li.tab-link.is-active: a(href="#tab1" data-rewrite-mode-disabled) Tab1
-                        li.tab-link: a(href="#tab2" data-rewrite-mode-disabled) Tab2
-                        li.tab-link: a(href="#tab3" data-rewrite-mode-disabled) Tab3
-                    .tabs-content
-                        #tab1
-                            h1 Tab1
-                        #tab2
-                            h1 Tab2
-                        #tab3
-                            h1 Tab3
+                    h1.display-3 Boilerplate v1.0.3
+                    p.lead
+                        | Projekt ten zawiera dokumentację, którą możesz wygenerować poprzez
+                        | #[code gulp pug-doc], znajdziesz tam najważniejsze informacje dotyczące
+                        | tego boilerplate.
+                    p.lead
+                        | Po poprawnym wykonaniu powyższego polecenie, jesteś gotowy na to, aby przejść
+                        | do przygotowanej struktury 
+                        | z&nbsp;#[a(href="/doc", title="Przejdz do strony z dokumentacją", target="_blank", data-rewrite-mode-disabled) dokumentacją]
+    footer.footer
+        .container
+            .row
+                .col-xs-12
+                    p.text-xs-center.note &#x24B8;&nbsp;2017 Boilerplate. Stworzone z &#x2665; przez Krzysztof Wielicki.
